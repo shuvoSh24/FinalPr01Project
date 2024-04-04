@@ -4,7 +4,9 @@ from django.views.generic import View
 from django.contrib import messages
 from django.template.loader import render_to_string
 from django.utils.http import urlsafe_base64_decode,urlsafe_base64_encode
-from .utils import TokenGenerator,generate_token
+# from .utils import TokenGenerator,generate_token
+
+
 # from django.utils.encoding import force_bytes,force_text,DjangoUnicodeDecodeError (error tih er 
 # jonno force_str disilam)
 from django.utils.encoding import force_bytes,force_str,DjangoUnicodeDecodeError  
@@ -40,7 +42,7 @@ def signup(request):
             'user':user,
             'domain':'127.0.0.1:8000',
             'uid':urlsafe_base64_encode(force_bytes(user.pk)),
-            'token':generate_token.make_token(user)
+            # 'token':generate_token.make_token(user)
 
         })
 
