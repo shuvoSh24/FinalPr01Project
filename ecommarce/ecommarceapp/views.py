@@ -3,8 +3,14 @@ from django.shortcuts import render
 # from django.contrib import messages
 
 # Create your views here.
-# def index(request):
-#     return render(request,"index.html")
+def index(request):
+    return render(request,"index.html")
+# 9-12 must be cmnt out after 15- line when uncomment
+def contact(request):
+    return render(request,"contact.html")
+def about(request):
+    return render(request,"about.html")
+
 
 # def contact(request):
 #     if request.method=="POST":

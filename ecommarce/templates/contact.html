@@ -2,8 +2,9 @@
 {% block title %}Contact{% endblock title %}
 
 {% block body %}
-    {% comment %} <h1 class="text-center">Contact us</h1>
-<div class="container mt-2">
+    <h1 class="text-center">Contact us</h1>
+    
+{% comment %} <div class="container mt-2">
     <div class="row">
         {% for message in messages %}
 
@@ -31,7 +32,7 @@
         <div class="form-group">
         <textarea type="text" class="form-control p-2" id="desc" name="desc" required></textarea>
         </div>
-        
+
         <label for="pnumber">Phone Number</label>
         <div class="form-group">
         <input type="number" class="form-control p-2" id="pnumber" name="pnumber" required>
@@ -39,7 +40,7 @@
         <br>
 
         <button type="submit" class="btn btn-dark">Submit</button>
-        
+
         <br>
         <br/>
         <br/>
@@ -49,7 +50,7 @@
         <div class="col-md-4"></div>
     </div>
 
-</div>
-     {% endcomment %}
+</div> {% endcomment %}
+
 {% endblock body %}
 
