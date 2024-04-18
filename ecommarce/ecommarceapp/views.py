@@ -2,9 +2,16 @@ from django.shortcuts import render
 from ecommarceapp.models import Contact
 from django.contrib import messages
 
+
+
+
+
 # Create your views here.
 def index(request):
+
+
     return render(request,"index.html")
+
 # 9-12 must be cmnt out after 15- line when uncomment
 # def contact(request):
 #     return render(request,"contact.html")
