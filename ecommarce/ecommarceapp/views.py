@@ -1,16 +1,30 @@
 from django.shortcuts import render
 from ecommarceapp.models import Contact
 from django.contrib import messages
-
+from math import ceil
+from ecommarceapp.models import Design
 
 
 
 
 # Create your views here.
 def index(request):
+    allProds = []
+    catprods = Design.objects.values('category', 'id')
+    print(catprods)
+    cats = {item['category'] for item in catprods}
+    for cat in cats:
+        prod = Design.objects.filter(category=cat)
+        n = len(prod)
+        nSlides = n // 4 + ceil((n / 4) - (n // 4))
+        allProds.append([prod, range(1, nSlides), nSlides])
+
+    params = {'allProds': allProds}
+
+    return render(request, "index.html", params)
 
 
-    return render(request,"index.html")
+
 
 # 9-12 must be cmnt out after 15- line when uncomment
 # def contact(request):
